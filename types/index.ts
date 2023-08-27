@@ -60,3 +60,36 @@ export interface SocialsProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string;
 	socialLinks: ProfileType["socials"];
 }
+
+type TimelineIconType =
+	| "GitHub"
+	| "Twitter"
+	| "Star"
+	| "Quote"
+	| "ThumbsDown"
+	| "Zap";
+
+type ShortLogType = {
+	title: string;
+	date: Date;
+	link?: {
+		text: string;
+		url: string;
+	};
+	icon: TimelineIconType;
+};
+
+type LongLogType = {
+	title: string;
+	date: Date;
+	link?: {
+		text: string;
+		url: string;
+	};
+	icon: TimelineIconType;
+	description: string;
+	location?: string;
+};
+
+type LogType = ShortLogType | LongLogType;
+export type TimelineType = LogType[];
