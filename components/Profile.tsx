@@ -26,14 +26,14 @@ const Profile = ({ className }: ProfileProps) => {
 						return <Tag type={tag} key={tag} />;
 					})}
 			</div>
-			<p>{PROFILE.bio}</p>
+			<p className="mt-6">{PROFILE.bio}</p>
 			{<Socials socialLinks={PROFILE.socials} />}
 			{PROFILE.button && (
 				<Link
 					href={PROFILE.button?.text}
 					className={`${buttonVariants({
 						variant: "default",
-					})} w-full bg-primary-custom text-primary-custom-foreground hover:text-[#000] mt-6`}
+					})} w-full bg-primary-custom hover:text-[#000] mt-6`}
 				>
 					<Zap size={20} strokeWidth={1.5} /> {PROFILE.button?.text}
 				</Link>
