@@ -29,7 +29,7 @@ const LongLog = ({ className, log, ...props }: LongLogProps) => {
 					{log.link && (
 						<Link
 							href={log.link?.url}
-							className="flex gap-2 items-center text-link"
+							className="flex gap-2 items-center text-link hover:underline hover:decoration-link"
 						>
 							<Link2Icon size={20} strokeWidth={1.5} />
 							<span className="">{log.link?.text}</span>

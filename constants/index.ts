@@ -21,10 +21,17 @@ export const PROFILE: ProfileType = {
 
 export const TIMELINE: TimelineType = [
 	{
+		title: "Finished the Toy version of Timeloom",
+		icon: "Zap",
+		date: new Date("2023-08-31"),
+		isFirst: true,
+		isLast: false,
+	},
+	{
 		title: "Failed to submit week 2 update in Nights & Weekends S4",
 		icon: "ThumbsDown",
 		date: new Date("2023-08-22"),
-		isFirst: true,
+		isFirst: false,
 		isLast: false,
 	},
 	{

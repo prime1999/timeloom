@@ -24,7 +24,7 @@ const ShortLog = ({ className, log, ...props }: ShortLogProps) => {
 				{log.link && (
 					<Link
 						href={log.link.url}
-						className="text-sm text-link flex items-start gap-2"
+						className="text-sm text-link hover:underline hover:decoration-link flex items-start gap-2"
 					>
 						{log.link.text}
 						<ExternalLink size={20} strokeWidth={1.5} />
