@@ -37,6 +37,8 @@
 
 		--primary-custom: 247 92% 60%;
 		--primary-custom-foreground: 0 0% 100%;
+
+		--link: 220 100% 66%;
 	}
 
 	.dark {
@@ -70,6 +72,8 @@
 		--border: 240 3.7% 15.9%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
+
+		--link: 220 100% 66%;
 	}
 }
 
@@ -94,7 +98,7 @@
 			--secondary: 240 3.7% 15.9%;
 			--secondary-foreground: 0 0% 98%;
 
-			--muted: 220 14% 9%;
+			--muted: 220 20% 7%;
 			--muted-foreground: 240 5% 64.9%;
 
 			--accent: 240 3.7% 15.9%;
@@ -106,6 +110,8 @@
 			--border: 240 3.7% 15.9%;
 			--input: 240 3.7% 15.9%;
 			--ring: 240 4.9% 83.9%;
+
+			--link: 220 100% 66%;
 		}
 	}
 }
@@ -123,7 +129,7 @@
 	}
 
 	h2 {
-		@apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+		@apply scroll-m-20 border-b text-3xl font-semibold tracking-tight transition-colors first:mt-0;
 	}
 
 	h3 {
@@ -135,6 +141,6 @@
 	}
 
 	p {
-		@apply leading-7 [&:not(:first-child)]:mt-6;
+		@apply leading-7;
 	}
 }

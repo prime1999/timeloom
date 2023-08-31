@@ -10,12 +10,19 @@ module.exports = {
 	theme: {
 		container: {
 			center: true,
-			padding: "2rem",
+			padding: {
+				DEFAULT: "1rem",
+				sm: "2rem",
+			},
 			screens: {
 				"2xl": "1400px",
 			},
 		},
 		extend: {
+			flex: {
+				2: "2",
+				1: "1",
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -75,6 +82,7 @@ module.exports = {
 					foreground: "rgba(217, 126, 229, 1)",
 					border: "rgba(217, 126, 229, .5)",
 				},
+				link: "hsl(var(--link))",
 			},
 			borderRadius: {
 				lg: "var(--radius)",

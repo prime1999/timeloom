@@ -4,33 +4,10 @@ export interface ProfileProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export interface TimelineProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string;
+	timeline: TimelineType;
 }
 
 type TagType = "Founder" | "First 100" | "Dev";
-
-// export type tagColorsType = {
-// 	background: string;
-// 	border: string;
-// 	foreground: string;
-// };
-
-// export const tagColors: Record<TagType, tagColorsType> = {
-// 	"First 100": {
-// 		background: "rgba(162, 238, 239, .18)",
-// 		foreground: "rgba(162, 238, 239, 1)",
-// 		border: "rgba(162, 238, 239, 0.5)",
-// 	},
-// 	Founder: {
-// 		background: "rgba(112, 87, 255, 0.18)",
-// 		foreground: "rgba(193, 184, 255, 1)",
-// 		border: "rgba(193, 184, 255, .5)",
-// 	},
-// 	Dev: {
-// 		background: "rgba(0, 134, 144, 0.18)",
-// 		foreground: "rgba(0, 230, 196, 1)",
-// 		border: "rgba(0, 230, 196, .7)",
-// 	},
-// };
 
 export interface ProfileType {
 	name: string;
@@ -61,7 +38,7 @@ export interface SocialsProps extends React.HTMLAttributes<HTMLDivElement> {
 	socialLinks: ProfileType["socials"];
 }
 
-type TimelineIconType =
+export type TimelineIconType =
 	| "GitHub"
 	| "Twitter"
 	| "Star"
@@ -69,7 +46,12 @@ type TimelineIconType =
 	| "ThumbsDown"
 	| "Zap";
 
-type ShortLogType = {
+export type TimelineIconProps = {
+	icon: TimelineIconType;
+	size: "sm" | "lg";
+};
+
+export type ShortLogType = {
 	title: string;
 	date: Date;
 	link?: {
@@ -77,9 +59,11 @@ type ShortLogType = {
 		url: string;
 	};
 	icon: TimelineIconType;
+	isFirst: boolean;
+	isLast: boolean;
 };
 
-type LongLogType = {
+export type LongLogType = {
 	title: string;
 	date: Date;
 	link?: {
@@ -89,7 +73,19 @@ type LongLogType = {
 	icon: TimelineIconType;
 	description: string;
 	location?: string;
+	isFirst: boolean;
+	isLast: boolean;
 };
 
-type LogType = ShortLogType | LongLogType;
+export type LogType = ShortLogType | LongLogType;
 export type TimelineType = LogType[];
+
+export interface ShortLogProps extends React.HTMLAttributes<HTMLDivElement> {
+	log: ShortLogType;
+	className?: string;
+}
+
+export interface LongLogProps extends React.HTMLAttributes<HTMLDivElement> {
+	log: LongLogType;
+	className?: string;
+}
