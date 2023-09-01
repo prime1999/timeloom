@@ -46,8 +46,11 @@ const Socials = ({ className, socialLinks, ...props }: SocialsProps) => {
 									variant: "icon",
 									size: "icon",
 								})}
+								aria-label={platform}
 								href={link}
 								key={platform}
+								rel="noopener noreferrer"
+								target="_blank"
 							>
 								{renderIcon(
 									platform as keyof ProfileType["socials"]

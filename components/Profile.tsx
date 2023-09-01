@@ -30,7 +30,9 @@ const Profile = ({ className }: ProfileProps) => {
 			{<Socials socialLinks={PROFILE.socials} />}
 			{PROFILE.button && (
 				<Link
-					href={PROFILE.button?.text}
+					href={PROFILE.button?.link}
+					rel="noopener noreferrer"
+					target="_blank"
 					className={`${buttonVariants({
 						variant: "default",
 					})} w-full bg-primary-custom hover:text-[#000] mt-6`}
