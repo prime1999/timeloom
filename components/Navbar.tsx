@@ -11,7 +11,7 @@ const Navbar = () => {
 					Timeloom<span className="text-primary-custom">.</span>
 				</Link>
 			</h1>
-			<div className="flex gap-5 items-center">
+			<div className="hidden md:flex gap-5 items-center">
 				<Link
 					href="https://x.com/inclinedadarsh/"
 					className={`${buttonVariants({

@@ -25,7 +25,7 @@ export default function Home() {
 				<Image
 					src={bgGrid}
 					alt="Background Grid Image"
-					className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 select-none pointer-events-none"
+					className="opacity-40 absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 select-none pointer-events-none"
 				/>
 				<h1 className="scroll-m-20 text-4xl font-semibold leading-tight lg:leading-tight lg:text-6xl bg-gradient-to-br from-[#ffffffff] from-[30%] to-[#ffffff80] text-transparent bg-clip-text">
 					Craft your tech journey timeline on{" "}
@@ -42,6 +42,8 @@ export default function Home() {
 				<div className="">
 					<Link
 						href="https://getwaitlist.com/waitlist/10387"
+						rel="noopener noreferrer"
+						target="_blank"
 						className={`${buttonVariants({
 							variant: "default",
 						})} bg-primary-custom hover:text-[#000] mr-5`}
