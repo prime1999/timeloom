@@ -5,7 +5,7 @@ import { Button, buttonVariants } from "./ui/button";
 
 const Navbar = () => {
 	return (
-		<div className="max-w-5xl mx-auto flex px-4 py-10 justify-between">
+		<div className="container flex px-4 py-6 justify-between">
 			<h1 className="font-semibold text-2xl">
 				<Link href="/">
 					Timeloom<span className="text-primary-custom">.</span>
