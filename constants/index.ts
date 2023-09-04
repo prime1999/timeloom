@@ -21,6 +21,20 @@ export const PROFILE: ProfileType = {
 
 export const TIMELINE: TimelineType = [
 	{
+		title: "Published waitlist of Timeloom",
+		description:
+			"Published the waitlist of Timeloom. The waitlist is open for everyone until the app is launched. Go to the home page to see the waitlist.",
+		date: new Date("2023-09-04"),
+		icon: "Star",
+		link: {
+			text: "Waitlist Link",
+			url: "https://timeloom.vercel.app/",
+		},
+		location: "GitHub",
+		isFirst: false,
+		isLast: false,
+	},
+	{
 		title: "Finished the Toy version of Timeloom",
 		icon: "Zap",
 		date: new Date("2023-08-31"),
