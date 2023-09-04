@@ -1,4 +1,4 @@
-import { ProfileType, TimelineType } from "@/types/index";
+import { ProfileType, TimelineType, HomeCards } from "@/types/index";
 
 export const PROFILE: ProfileType = {
 	name: "Adarsh Dubey",
@@ -130,5 +130,35 @@ export const TIMELINE: TimelineType = [
 		},
 		isFirst: false,
 		isLast: true,
+	},
+];
+
+export const CARDS: HomeCards = [
+	{
+		title: "Building in public",
+		description:
+			"Building Timeloom in public by sharing constant progress and taking feedbacks. Build — Ship — Revaluate",
+		link: {
+			text: "Twitter",
+			url: "https://twitter.com/inclinedadarsh",
+		},
+	},
+	{
+		title: "Open for contributions",
+		description:
+			"Timeloom welcomes contributions from the community, be it adding a new feature or fixing a bug.",
+		link: {
+			text: "GitHub Repo",
+			url: "https://github.com/inclinedadarsh/timeloom",
+		},
+	},
+	{
+		title: "Open for feedback",
+		description:
+			"Feedbacks are most welcome and appreciated. Be it a general feedback, feature request or a criticsm, I would love to hear it.",
+		link: {
+			text: "Discussions",
+			url: "https://github.com/inclinedadarsh/timeloom/discussions",
+		},
 	},
 ];

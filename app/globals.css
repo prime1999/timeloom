@@ -39,6 +39,8 @@
 		--primary-custom-foreground: 0 0% 100%;
 
 		--link: 220 100% 66%;
+
+		--transparent: rgba(255, 255, 255, 0);
 	}
 
 	.dark {
@@ -117,6 +119,9 @@
 }
 
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
 	* {
 		@apply border-border;
 	}
@@ -124,23 +129,31 @@
 		@apply bg-background text-foreground;
 	}
 
-	h1 {
+	.h1 {
 		@apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
 	}
 
-	h2 {
+	.h2 {
 		@apply scroll-m-20 border-b text-3xl font-semibold tracking-tight transition-colors first:mt-0;
 	}
 
-	h3 {
+	.h3 {
 		@apply scroll-m-20 text-2xl font-semibold tracking-tight;
 	}
 
-	h4 {
+	.h4 {
 		@apply scroll-m-20 text-xl font-semibold tracking-tight;
 	}
 
 	p {
 		@apply leading-7;
+	}
+
+	.bg-radial {
+		background: radial-gradient(
+			ellipse 80% 50% at 50% -20%,
+			rgba(120, 119, 198, 0.3),
+			var(--transparent)
+		);
 	}
 }

@@ -98,7 +98,7 @@ const TimelineIcon = ({ icon, size }: TimelineIconProps) => {
 	};
 
 	return (
-		<div className="h-11 w-11 flex justify-center items-center relative z-10">
+		<div className="h-11 w-11 flex justify-center items-center relative z-1">
 			{renderIcon(icon)}
 		</div>
 	);

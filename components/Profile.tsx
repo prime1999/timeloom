@@ -18,7 +18,7 @@ const Profile = ({ className }: ProfileProps) => {
 				alt="Profile Image"
 				className="w-40 h-40 rounded-full"
 			/>
-			<h1 className="mt-12 ">{PROFILE.name}</h1>
+			<h1 className="mt-12 h1">{PROFILE.name}</h1>
 			<div className="flex gap-2 mt-1">
 				<div className="text-muted-foreground font-medium">{`/${PROFILE.username}`}</div>
 				{PROFILE.tags &&
