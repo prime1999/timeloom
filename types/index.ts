@@ -89,3 +89,14 @@ export interface LongLogProps extends React.HTMLAttributes<HTMLDivElement> {
 	log: LongLogType;
 	className?: string;
 }
+
+type HomeCard = {
+	title: string;
+	description: string;
+	link: {
+		text: string;
+		url: string;
+	};
+};
+
+export type HomeCards = HomeCard[];
