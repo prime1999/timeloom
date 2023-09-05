@@ -31,14 +31,14 @@ export const TIMELINE: TimelineType = [
 			url: "https://timeloom.vercel.app/",
 		},
 		location: "GitHub",
-		isFirst: false,
+		isFirst: true,
 		isLast: false,
 	},
 	{
 		title: "Finished the Toy version of Timeloom",
 		icon: "Zap",
 		date: new Date("2023-08-31"),
-		isFirst: true,
+		isFirst: false,
 		isLast: false,
 	},
 	{
