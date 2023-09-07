@@ -29,7 +29,7 @@ export default function Home() {
 				/>
 				<h1 className="scroll-m-20 text-4xl font-semibold leading-tight lg:leading-tight lg:text-6xl bg-gradient-to-br from-[#ffffffff] from-[30%] to-[#ffffff80] text-transparent bg-clip-text">
 					Craft your tech journey timeline on{" "}
-					<span className="">Timloom</span>
+					<span className="">Timeloom</span>
 				</h1>
 				<p className="text-muted-foreground">
 					Timeloom helps you to document your technical journey in an
