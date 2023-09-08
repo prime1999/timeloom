@@ -8,8 +8,35 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Timeloom",
-	description: "Log your technical journey and share it with the world",
+	title: {
+		default: "Timeloom - Craft your technical timeline",
+		template: "%s | Timeloom",
+	},
+	description:
+		"Document and craft your technical journey and share it with the world. Timeloom is a timeline builder for someone who wants to share their technical journey.",
+	colorScheme: "dark",
+	keywords: [
+		"timeline",
+		"tech journey",
+		"typescript",
+		"open source",
+		"timeloom",
+	],
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: "https://timeloom.vercel.app/",
+		title: "Timeloom",
+		description:
+			"Document and craft your technical journey and share it with the world. Timeloom is a timeline builder for someone who wants to share their technical journey.",
+		siteName: "Timeloom",
+	},
+	twitter: {
+		title: "Timeloom - Craft your technical timeline",
+		description:
+			"Document and craft your technical journey and share it with the world. Timeloom is a timeline builder for someone who wants to share their technical journey.",
+		creator: "@inclinedadarsh",
+	},
 };
 
 export default function RootLayout({
