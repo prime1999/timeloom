@@ -1,5 +1,9 @@
 "use client";
 
+import { FormEvent, useState } from "react";
+
+import axios from "axios";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -21,6 +25,8 @@ import {
 	CardDescription,
 	CardHeader,
 } from "@/components/ui/card";
+
+import { Loader2Icon } from "lucide-react";
 
 const formSchema = z.object({
 	username: z
@@ -79,8 +85,19 @@ const Page = () => {
 
 	const { handleSubmit, control } = form;
 
-	const onSubmit = (values: z.infer<typeof formSchema>) => {
-		console.log(values);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+
+	const onSubmit = async (values: z.infer<typeof formSchema>) => {
+		// console.log(values);
+		setIsLoading(true);
+		try {
+			const response = await axios.post("/api/users/signup", values);
+			console.log(response);
+		} catch (error) {
+			console.log(error.response.data.message);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -95,7 +112,10 @@ const Page = () => {
 				<div className="">
 					<Form {...form}>
 						<form
-							onSubmit={handleSubmit(onSubmit)}
+							onSubmit={(event: FormEvent<HTMLFormElement>) => {
+								event.preventDefault();
+								handleSubmit(onSubmit)();
+							}}
 							className="space-y-6"
 						>
 							<FormField
@@ -156,7 +176,14 @@ const Page = () => {
 									</FormItem>
 								)}
 							/>
-							<Button type="submit" className="w-full">
+							<Button
+								type="submit"
+								disabled={isLoading ? true : false}
+								className="w-full"
+							>
+								{isLoading && (
+									<Loader2Icon className="animate-spin inline-block mr-2" />
+								)}
 								Create account
 							</Button>
 						</form>
