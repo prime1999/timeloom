@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import axios from "axios";
 
@@ -25,6 +26,7 @@ import {
 	CardContent,
 	CardDescription,
 	CardHeader,
+	CardFooter,
 } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -242,6 +244,17 @@ const Page = () => {
 					</Form>
 				</div>
 			</CardContent>
+			<CardFooter>
+				<p className="mx-auto text-muted-foreground">
+					Already have an account?{" "}
+					<Link
+						href="/login"
+						className="font-medium hover:underline text-primary-foreground"
+					>
+						Login
+					</Link>
+				</p>
+			</CardFooter>
 		</Card>
 	);
 };
