@@ -56,9 +56,7 @@ const formSchema = z.object({
 					);
 
 					return response.data.available;
-				} catch (error) {
-					console.log(error.response.data.message);
-				}
+				} catch (error) {}
 			},
 			{
 				message: "Username not available",
@@ -77,9 +75,7 @@ const formSchema = z.object({
 					});
 
 					return response.data.available;
-				} catch (error) {
-					console.log(error.response.data.message);
-				}
+				} catch (error) {}
 			},
 			{
 				message: "Email address already in use",
@@ -128,11 +124,9 @@ const Page = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
-		// console.log(values);
 		setIsLoading(true);
 		try {
 			const response = await axios.post("/api/users/signup", values);
-			console.log(response);
 			toast({
 				title: "Account successfully created",
 				description:
@@ -144,7 +138,6 @@ const Page = () => {
 				router.push("/login");
 			}, 4000);
 		} catch (error) {
-			console.log(error.response.data.message);
 			toast({
 				title: "Error! Account not created",
 				description: error.response.data.message,
@@ -155,107 +148,114 @@ const Page = () => {
 	};
 
 	return (
-		<Card className="max-w-md mx-auto">
-			<CardHeader className="space-y-1">
-				<CardTitle className="text-2xl">Create an account</CardTitle>
-				<CardDescription>
-					Enter your email and choose a username to create an account
-				</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<div className="">
-					<Form {...form}>
-						<form
-							onSubmit={(event: FormEvent<HTMLFormElement>) => {
-								event.preventDefault();
-								handleSubmit(onSubmit)();
-							}}
-							className="space-y-6"
-						>
-							<FormField
-								control={control}
-								name="email"
-								render={({ field }) => (
-									<FormItem>
-										<FormLabel htmlFor="email">
-											Email Address
-										</FormLabel>
-										<FormControl>
-											<Input
-												placeholder="example@something.com"
-												id="email"
-												{...field}
-											/>
-										</FormControl>
-										<FormMessage />
-									</FormItem>
-								)}
-							/>
-							<FormField
-								control={control}
-								name="username"
-								render={({ field }) => (
-									<FormItem>
-										<FormLabel htmlFor="username">
-											Username
-										</FormLabel>
-										<FormControl>
-											<Input
-												placeholder="coolusername"
-												id="username"
-												{...field}
-											/>
-										</FormControl>
-										<FormMessage />
-									</FormItem>
-								)}
-							/>
-							<FormField
-								control={control}
-								name="password"
-								render={({ field }) => (
-									<FormItem>
-										<FormLabel htmlFor="password">
-											Password
-										</FormLabel>
-										<FormControl>
-											<Input
-												placeholder="secretlol"
-												{...field}
-												type="password"
-												id="password"
-											/>
-										</FormControl>
-										<FormMessage />
-									</FormItem>
-								)}
-							/>
-							<Button
-								type="submit"
-								disabled={isLoading ? true : false}
-								className="w-full"
+		<div className="max-w-md mx-auto px-6 grow flex flex-col mt-6 justify-center">
+			<Card className="">
+				<CardHeader className="space-y-1">
+					<CardTitle className="text-2xl">
+						Create an account
+					</CardTitle>
+					<CardDescription>
+						Enter your email and choose a username to create an
+						account
+					</CardDescription>
+				</CardHeader>
+				<CardContent>
+					<div className="">
+						<Form {...form}>
+							<form
+								onSubmit={(
+									event: FormEvent<HTMLFormElement>
+								) => {
+									event.preventDefault();
+									handleSubmit(onSubmit)();
+								}}
+								className="space-y-6"
 							>
-								{isLoading && (
-									<Loader2Icon className="animate-spin inline-block mr-2" />
-								)}
-								Create account
-							</Button>
-						</form>
-					</Form>
-				</div>
-			</CardContent>
-			<CardFooter>
-				<p className="mx-auto text-muted-foreground">
-					Already have an account?{" "}
-					<Link
-						href="/login"
-						className="font-medium hover:underline text-primary-foreground"
-					>
-						Login
-					</Link>
-				</p>
-			</CardFooter>
-		</Card>
+								<FormField
+									control={control}
+									name="email"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel htmlFor="email">
+												Email Address
+											</FormLabel>
+											<FormControl>
+												<Input
+													placeholder="example@something.com"
+													id="email"
+													{...field}
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={control}
+									name="username"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel htmlFor="username">
+												Username
+											</FormLabel>
+											<FormControl>
+												<Input
+													placeholder="coolusername"
+													id="username"
+													{...field}
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={control}
+									name="password"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel htmlFor="password">
+												Password
+											</FormLabel>
+											<FormControl>
+												<Input
+													placeholder="secretlol"
+													{...field}
+													type="password"
+													id="password"
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<Button
+									type="submit"
+									disabled={isLoading ? true : false}
+									className="w-full"
+								>
+									{isLoading && (
+										<Loader2Icon className="animate-spin inline-block mr-2" />
+									)}
+									Create account
+								</Button>
+							</form>
+						</Form>
+					</div>
+				</CardContent>
+				<CardFooter>
+					<p className="mx-auto text-muted-foreground">
+						Already have an account?{" "}
+						<Link
+							href="/login"
+							className="font-medium hover:underline text-primary-foreground"
+						>
+							Login
+						</Link>
+					</p>
+				</CardFooter>
+			</Card>
+		</div>
 	);
 };
 

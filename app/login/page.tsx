@@ -82,88 +82,90 @@ const Page = () => {
 	};
 
 	return (
-		<Card className="max-w-md mx-auto">
-			<CardHeader className="space-y-1">
-				<CardTitle className="text-2xl">
-					Log in to your account
-				</CardTitle>
-				<CardDescription>
-					Enter your username and password to login.
-				</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<Form {...form}>
-					<form
-						onSubmit={(event: FormEvent<HTMLFormElement>) => {
-							event.preventDefault();
-							handleSubmit(onSubmit)();
-						}}
-						className="space-y-6"
-					>
-						<FormField
-							control={control}
-							name="username"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel htmlFor="username">
-										Username
-									</FormLabel>
-									<FormControl>
-										<Input
-											placeholder="coolusername"
-											id="username"
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={control}
-							name="password"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel htmlFor="password">
-										Password
-									</FormLabel>
-									<FormControl>
-										<Input
-											placeholder="secretlol"
-											{...field}
-											type="password"
-											id="password"
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<Button
-							type="submit"
-							disabled={isLoading ? true : false}
-							className="w-full"
+		<div className="max-w-md mx-auto px-6 grow flex flex-col justify-center mt-6">
+			<Card>
+				<CardHeader className="space-y-1">
+					<CardTitle className="text-2xl">
+						Log in to your account
+					</CardTitle>
+					<CardDescription>
+						Enter your username and password to login.
+					</CardDescription>
+				</CardHeader>
+				<CardContent>
+					<Form {...form}>
+						<form
+							onSubmit={(event: FormEvent<HTMLFormElement>) => {
+								event.preventDefault();
+								handleSubmit(onSubmit)();
+							}}
+							className="space-y-6"
 						>
-							{isLoading && (
-								<Loader2Icon className="animate-spin inline-block mr-2" />
-							)}
-							Log In
-						</Button>
-					</form>
-				</Form>
-			</CardContent>
-			<CardFooter>
-				<p className="mx-auto text-muted-foreground">
-					Don&apos;t have an account?{" "}
-					<Link
-						href="/signup"
-						className="font-medium hover:underline text-primary-foreground"
-					>
-						Create account
-					</Link>
-				</p>
-			</CardFooter>
-		</Card>
+							<FormField
+								control={control}
+								name="username"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel htmlFor="username">
+											Username
+										</FormLabel>
+										<FormControl>
+											<Input
+												placeholder="coolusername"
+												id="username"
+												{...field}
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={control}
+								name="password"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel htmlFor="password">
+											Password
+										</FormLabel>
+										<FormControl>
+											<Input
+												placeholder="secretlol"
+												{...field}
+												type="password"
+												id="password"
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<Button
+								type="submit"
+								disabled={isLoading ? true : false}
+								className="w-full"
+							>
+								{isLoading && (
+									<Loader2Icon className="animate-spin inline-block mr-2" />
+								)}
+								Log In
+							</Button>
+						</form>
+					</Form>
+				</CardContent>
+				<CardFooter>
+					<p className="mx-auto text-muted-foreground">
+						Don&apos;t have an account?{" "}
+						<Link
+							href="/signup"
+							className="font-medium hover:underline text-primary-foreground"
+						>
+							Create account
+						</Link>
+					</p>
+				</CardFooter>
+			</Card>
+		</div>
 	);
 };
 
