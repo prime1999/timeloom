@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import axios from "axios";
 
@@ -25,6 +26,7 @@ import {
 	CardDescription,
 	CardHeader,
 } from "@/components/ui/card";
+import { useToast } from "@/components/ui/use-toast";
 
 import { Loader2Icon } from "lucide-react";
 
@@ -37,14 +39,10 @@ const formSchema = z.object({
 		.max(16, {
 			message: "Username must be at most 16 characters long",
 		})
-		.refine(
-			username => {
-				return !username.includes(" ");
-			},
-			{
-				message: "Username cannot contain spaces",
-			}
-		)
+		.regex(/^[a-zA-Z]{3,16}$/, {
+			message:
+				"Username cannot contain special characters, numbers or spaces",
+		})
 		.refine(
 			async username => {
 				try {
@@ -119,6 +117,9 @@ const Page = () => {
 			password: "",
 		},
 	});
+	const { toast } = useToast();
+
+	const router = useRouter();
 
 	const { handleSubmit, control } = form;
 
@@ -130,8 +131,22 @@ const Page = () => {
 		try {
 			const response = await axios.post("/api/users/signup", values);
 			console.log(response);
+			toast({
+				title: "Account successfully created",
+				description:
+					"Your account has been created. Redirecting to login page. Please login to continue.",
+				type: "background",
+			});
+
+			setTimeout(() => {
+				router.push("/login");
+			}, 4000);
 		} catch (error) {
 			console.log(error.response.data.message);
+			toast({
+				title: "Error! Account not created",
+				description: error.response.data.message,
+			});
 		} finally {
 			setIsLoading(false);
 		}
