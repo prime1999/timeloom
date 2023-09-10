@@ -44,10 +44,47 @@ const formSchema = z.object({
 			{
 				message: "Username cannot contain spaces",
 			}
+		)
+		.refine(
+			async username => {
+				try {
+					const response = await axios.post(
+						"/api/validation/username",
+						{
+							username,
+						}
+					);
+
+					return response.data.available;
+				} catch (error) {
+					console.log(error.response.data.message);
+				}
+			},
+			{
+				message: "Username not available",
+			}
 		),
-	email: z.string().email({
-		message: "Invalid email address",
-	}),
+	email: z
+		.string()
+		.email({
+			message: "Invalid email address",
+		})
+		.refine(
+			async email => {
+				try {
+					const response = await axios.post("/api/validation/email", {
+						email,
+					});
+
+					return response.data.available;
+				} catch (error) {
+					console.log(error.response.data.message);
+				}
+			},
+			{
+				message: "Email address already in use",
+			}
+		),
 	password: z
 		.string()
 		.min(8, {
