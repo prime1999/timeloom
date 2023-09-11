@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -109,6 +109,7 @@ const formSchema = z.object({
 const Page = () => {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
+		reValidateMode: "onSubmit",
 		defaultValues: {
 			username: "",
 			email: "",
@@ -119,12 +120,10 @@ const Page = () => {
 
 	const router = useRouter();
 
-	const { handleSubmit, control } = form;
-
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const { handleSubmit, control, formState } = form;
+	const { isSubmitting, isValidating } = formState;
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
-		setIsLoading(true);
 		try {
 			const response = await axios.post("/api/users/signup", values);
 			toast({
@@ -136,14 +135,13 @@ const Page = () => {
 
 			setTimeout(() => {
 				router.push("/login");
-			}, 4000);
+			}, 1000);
 		} catch (error) {
 			toast({
 				title: "Error! Account not created",
 				description: error.response.data.message,
 			});
 		} finally {
-			setIsLoading(false);
 		}
 	};
 
@@ -165,7 +163,7 @@ const Page = () => {
 							<form
 								onSubmit={(
 									event: FormEvent<HTMLFormElement>
-								) => {
+								): void => {
 									event.preventDefault();
 									handleSubmit(onSubmit)();
 								}}
@@ -231,10 +229,14 @@ const Page = () => {
 								/>
 								<Button
 									type="submit"
-									disabled={isLoading ? true : false}
+									disabled={
+										isSubmitting || isValidating
+											? true
+											: false
+									}
 									className="w-full"
 								>
-									{isLoading && (
+									{(isSubmitting || isValidating) && (
 										<Loader2Icon className="animate-spin inline-block mr-2" />
 									)}
 									Create account
