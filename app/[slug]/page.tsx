@@ -7,6 +7,7 @@ import axios from "axios";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Loader2 } from "lucide-react";
+import logout from "@/lib/logout";
 
 const Page = ({ params }: { params: { slug: string } }) => {
 	const [data, setData] = useState<Data | undefined>(undefined);
@@ -47,10 +48,10 @@ const Page = ({ params }: { params: { slug: string } }) => {
 		setLoading(false);
 	}, [params.slug]);
 
-	const logout = async () => {
+	const handleLogout = async () => {
 		try {
 			setIsLoggingOut(true);
-			await axios.get("/api/users/logout");
+			await logout();
 			toast({
 				title: "Logged out successfully",
 				description: "Redirecting you to the homepage...",
@@ -101,7 +102,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
 			</p>
 			{data?.isLoggedIn ? (
 				<Button
-					onClick={logout}
+					onClick={handleLogout}
 					variant="outline"
 					disabled={isLoggingOut ? true : false}
 					className="mt-6"
