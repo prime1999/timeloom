@@ -49,7 +49,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${inter.className} flex flex-col min-h-screen`}>
 				<Navbar />
-				<div className="grow flex">{children}</div>
+				<div className="grow">{children}</div>
 				<Footer />
 				<Toaster />
 				<Analytics />

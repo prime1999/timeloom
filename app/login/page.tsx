@@ -82,7 +82,7 @@ const Page = () => {
 	};
 
 	return (
-		<div className="max-w-md mx-auto px-6 grow flex flex-col justify-center mt-6">
+		<div className="max-w-md mx-auto px-6 h-fit mt-6">
 			<Card>
 				<CardHeader className="space-y-1">
 					<CardTitle className="text-2xl">
