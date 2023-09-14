@@ -19,7 +19,6 @@ const GET = async () => {
 
 		return response;
 	} catch (error) {
-		console.log(error);
 		return NextResponse.json(
 			{
 				message: error.message,

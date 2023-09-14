@@ -39,7 +39,6 @@ const Page = ({ params }: { params: { slug: string } }) => {
 				);
 				setData(response.data);
 			} catch (error) {
-				console.log(error);
 				setData(undefined);
 			}
 		};
@@ -58,7 +57,6 @@ const Page = ({ params }: { params: { slug: string } }) => {
 			});
 			router.push("/");
 		} catch (error) {
-			console.log(error);
 			toast({
 				title: "Failed to log out",
 				description: error.message,

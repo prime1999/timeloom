@@ -7,7 +7,6 @@ export const config = {
 
 export async function middleware(req: NextRequest) {
 	const token = req.cookies.get("token")?.value || "";
-	console.log("token: ", token);
 
 	if (!token) {
 		return NextResponse.next();

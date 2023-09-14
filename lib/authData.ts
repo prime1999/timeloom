@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 const authData = (req: NextRequest) => {
 	try {
 		const token = req.cookies.get("token")?.value || "";
-		console.log("token: ", token);
 
 		if (!token) {
 			return null;
