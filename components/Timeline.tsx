@@ -12,7 +12,7 @@ const Timeline = ({ className, timeline }: TimelineProps) => {
 	});
 
 	return (
-		<div className={`${className} w-full min-h-full pt-12 relative`}>
+		<div className={`${className} w-full pt-12 relative`}>
 			{acitivityLogs}
 		</div>
 	);

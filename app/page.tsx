@@ -11,9 +11,11 @@ import {
 	CardFooter,
 } from "@/components/ui/card";
 
+import UsernameCheck from "@/components/UsernameCheck";
+
 import bgGrid from "@/assets/bg-grid.png";
 import toyMockup from "@/assets/toy-mockup.png";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 
 import { CARDS } from "@/constants";
 
@@ -36,19 +38,17 @@ export default function Home() {
 					activity timeline like page. You can create your own page,
 					craft it as you like and show it off to the world.{" "}
 					<span className="text-white font-medium">
-						Join the waitlist today!
+						Claim your username today!
 					</span>
 				</p>
 				<div className="">
 					<Link
-						href="https://getwaitlist.com/waitlist/10387"
-						rel="noopener noreferrer"
-						target="_blank"
+						href="/signup"
 						className={`${buttonVariants({
 							variant: "default",
 						})} bg-primary-custom hover:text-[#000] mr-5`}
 					>
-						Join the Waitlist
+						Claim your username
 					</Link>
 					<Link
 						href="#toy"
@@ -75,6 +75,9 @@ export default function Home() {
 				>
 					Toy Version <ArrowUpRight size={20} strokeWidth={1.5} />
 				</Link>
+			</section>
+			<section className="mt-20 mx-auto max-w-4xl">
+				<UsernameCheck />
 			</section>
 			<section className="mt-20">
 				<h2 className="text-center text-3xl font-semibold">
