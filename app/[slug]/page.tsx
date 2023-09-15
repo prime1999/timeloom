@@ -68,11 +68,15 @@ const Page = ({ params }: { params: { slug: string } }) => {
 	};
 
 	if (loading) {
-		return <div>Loading...</div>;
+		return (
+			<div className="flex justify-center mt-20 gap-4">
+				Loading <Loader2 className="animate-spin" />
+			</div>
+		);
 	}
 
 	return (
-		<div className="max-w-2xl mx-auto mt-10">
+		<div className="max-w-2xl mx-auto mt-10 px-6">
 			<h1 className="lg:text-5xl spacing tracking-normal text-4xl font-bold">
 				/{params.slug}
 			</h1>
