@@ -29,8 +29,13 @@ import {
 	CardFooter,
 } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
-import { Loader2Icon } from "lucide-react";
+import { Loader2Icon, Info } from "lucide-react";
 
 const formSchema = z.object({
 	username: z
@@ -93,7 +98,7 @@ const formSchema = z.object({
 			/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/,
 			{
 				message:
-					"Password must contain at least one uppercase letter, one lowercase letter, and one number",
+					"Password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
 			}
 		)
 		.refine(
@@ -212,12 +217,34 @@ const Page = () => {
 									name="password"
 									render={({ field }) => (
 										<FormItem>
-											<FormLabel htmlFor="password">
+											<FormLabel
+												htmlFor="password"
+												className="flex items-center"
+											>
 												Password
+												<HoverCard>
+													<HoverCardTrigger>
+														<Info
+															className="inline-block ml-2"
+															size={16}
+															strokeWidth={1.5}
+														/>
+													</HoverCardTrigger>
+													<HoverCardContent
+														className="leading-snug"
+														data-side="top"
+													>
+														Password must contain at
+														least one uppercase
+														letter, one lowercase
+														letter, one number and
+														one special character.
+													</HoverCardContent>
+												</HoverCard>
 											</FormLabel>
 											<FormControl>
 												<Input
-													placeholder="secretlol"
+													placeholder="Secret@123"
 													{...field}
 													type="password"
 													id="password"
