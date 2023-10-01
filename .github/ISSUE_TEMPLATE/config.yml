@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Timeloom Discussions
+    url: https://github.com/inclinedadarsh/timeloom/discussions
+    about: Please ask and answer questions here.
+  - name: Contact for external help
+    url: https://twitter.com/inclinedadarsh
+    about: Please text me here for any project related help that could not be solved here.
+  - name: Feature Request Discussion
+    url: https://github.com/inclinedadarsh/timeloom/discussions/2
+    about: Visit the Feature discussion so we can make the most of your idea/request.
