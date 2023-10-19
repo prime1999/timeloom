@@ -67,17 +67,82 @@ Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) when participating in
 
 ## Submitting Your Contributions
 
-1.Fork the repository to your GitHub account.
+STEP 1: Fork the repository to your GitHub account.
 
-2.Create a new branch for your contributions.
+- Navigate to the repository you want to contribute to on GitHub. Click the "Fork" button in the top right corner of the repository's page. This will create a copy of the repository in your GitHub account.
 
-3.Make your changes, following the project's contribution guidelines.
+STEP 2: Clone the Repository
 
-4.Commit and push your changes to your repository.
+1. On GitHub.com, navigate to the main page of the repository.
 
-5.Create a pull request to the original repository, clearly describing your contribution.
+2. Above the list of files, click  Code.
 
-6.Your pull request will be reviewed by maintainers, and any necessary feedback will be provided.
+![Clone-Repo-1.](/assets/contributing-img/click-on-Code.png "Clone-repo-1")
+
+3. Copy the URL for the repository.
+
+- To clone the repository using HTTPS, under "HTTPS", copy.
+- To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then copy.
+- To clone a repository using GitHub CLI, click GitHub CLI, then copy.
+
+![Clone-Repo-2.](/assets/contributing-img/copy-repo-url.png "Clone-repo-2")
+
+4. Open Git Bash.
+
+5. Change the current working directory to the location where you want the cloned directory.
+
+6. Type git clone, and then paste the URL you copied earlier.
+
+```sh
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter to create your local clone.
+
+```sh
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+STEP 3: Create a new branch for your contributions.
+
+- Navigate into the cloned repository's directory using the cd command and create a new branch for your contributions:
+
+```sh
+cd repository-name
+git checkout -b new-branch-name
+```
+
+STEP 4: Make your changes.
+
+- Make the necessary changes to the code, documentation, or any other contributions as specified by the project.
+
+STEP 5: Commit and changes to your repository.
+
+- Once you've made your changes, commit them using the following commands:
+
+```sh
+git add .
+git commit -m "Description of your changes"
+```
+
+STEP 6: Push Your Changes.
+
+- Push your changes to your forked repository on GitHub.
+
+```sh
+git push origin new-branch-name
+```
+
+STEP 7: Create a pull request to the original repository, clearly describing your contribution.
+
+- Go to the original repository on GitHub and click on the "New Pull Request" button. This will allow you to create a pull request from your forked repository to the original repository. Be sure to describe your contribution in the pull request.
+
+7. Your pull request will be reviewed by maintainers, and any necessary feedback will be provided.
 
 ## Additional Information
 
