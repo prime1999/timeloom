@@ -150,4 +150,15 @@ For additional questions or support, you can:
 
 Visit the [Hacktoberfest official website](https://hacktoberfest.com) for event details.
 Reach out to project maintainers for specific project-related inquiries.
-Thank you for contributing to Hacktoberfest 2023! Happy coding! 🖥️
+
+## Support
+
+If you need additional support or have any questions, you can reach out to us through the following channels:
+
+GitHub: [inclinedadarsh](https://github.com/inclinedadarsh)
+
+Gmail: dubeyadarshmain@gmail.com
+
+Twitter: [inclinedadarsh](https://twitter.com/inclinedadarsh)
+
+Thank you for contributing to Timeloom! Happy coding! 🖥️
