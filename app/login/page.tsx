@@ -33,9 +33,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { Loader2Icon } from "lucide-react";
 
 const formSchema = z.object({
-	username: z.string().regex(/^[a-zA-Z]{3,16}$/, {
-		message:
-			"Username cannot contain special characters, numbers or spaces",
+	username: z.string().min(1, {
+		message: "Username cannot be empty",
 	}),
 	password: z.string().min(1, {
 		message: "Password cannot be empty",

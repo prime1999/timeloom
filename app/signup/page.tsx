@@ -46,10 +46,10 @@ const formSchema = z.object({
 		.max(16, {
 			message: "Username must be at most 16 characters long",
 		})
-		.regex(/^[a-zA-Z]{3,16}$/, {
+		.regex(/^(?!\.)[a-zA-Z0-9_]+(?:\.[a-zA-Z0-9_]+)*$/, {
 			message:
-				"Username cannot contain special characters, numbers or spaces",
-		})
+			  "Username can only contain letters, numbers, and underscores. It must be between 3 and 16 characters long, and it cannot start with a full stop.",
+		  })
 		.refine(
 			async username => {
 				try {
