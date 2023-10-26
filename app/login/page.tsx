@@ -33,10 +33,9 @@ import { useToast } from "@/components/ui/use-toast";
 import { Loader2Icon } from "lucide-react";
 
 const formSchema = z.object({
-	username: z.string().regex(/^(?!\.)[a-zA-Z0-9_]+(?:\.[a-zA-Z0-9_]+)*$/, {
-		message:
-		  "Username can only contain letters, numbers, and underscores. It must be between 3 and 16 characters long, and it cannot start with a full stop.",
-	  }),
+	username: z.string().min(1, {
+		message: "Username cannot be empty",
+	}),
 	password: z.string().min(1, {
 		message: "Password cannot be empty",
 	}),
