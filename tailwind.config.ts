@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: ["class"],
+	darkMode: ["media", "class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -62,20 +62,40 @@ module.exports = {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
 				},
+				"tag-purple-light": {
+					DEFAULT: "rgba(112, 87, 255, .18)",
+					foreground: "rgba(90, 34, 139, 1)",
+					border: "rgba(90, 34, 139, .5)",
+				},
 				"tag-purple": {
 					DEFAULT: "rgba(112, 87, 255, .18)",
 					foreground: "rgba(193, 184, 255, 1)",
 					border: "rgba(193, 184, 255, .5)",
+				},
+				"tag-cyan-light": {
+					DEFAULT: "rgba(162, 238, 239, .18)",
+					foreground: "rgba(22, 128, 136, 1)",
+					border: "rgba(22, 128, 136, .5)",
 				},
 				"tag-cyan": {
 					DEFAULT: "rgba(162, 238, 239, .18)",
 					foreground: "rgba(162, 238, 239, 1)",
 					border: "rgba(162, 238, 239, .5)",
 				},
+				"tag-green-light": {
+					DEFAULT: "rgba(0, 134, 114, .18)",
+					foreground: "rgba(0, 169, 144, 1)",
+					border: "rgba(0, 169, 144, .5)",
+				},
 				"tag-green": {
 					DEFAULT: "rgba(0, 134, 114, .18)",
 					foreground: "rgba(0, 230, 196, 1)",
 					border: "rgba(0, 230, 196, .5)",
+				},
+				"tag-pink-light": {
+					DEFAULT: "rgba(216, 118, 227, .18)",
+					foreground: "rgba(209, 137, 168, 1)",
+					border: "rgba(209, 137, 168, .5)",
 				},
 				"tag-pink": {
 					DEFAULT: "rgba(216, 118, 227, .18)",

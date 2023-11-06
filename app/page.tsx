@@ -28,8 +28,8 @@ export default function Home() {
 					src={bgGrid}
 					alt="Background Grid Image"
 					className="opacity-40 absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 select-none pointer-events-none"
-				/>
-				<h1 className="scroll-m-20 text-4xl font-semibold leading-tight lg:leading-tight lg:text-6xl bg-gradient-to-br from-[#ffffffff] from-[30%] to-[#ffffff80] text-transparent bg-clip-text">
+									/>
+				<h1 className="scroll-m-20 text-4xl font-semibold leading-tight lg:leading-tight lg:text-6xl bg-gradient-to-br from-[#000000ab] from-[30%] to-[#3d3d3df0] dark:bg-gradient-to-br dark:from-[#ffffffff] dark:from-[30%] dark:to-[#ffffff80] text-transparent bg-clip-text">
 					Craft your tech journey timeline on{" "}
 					<span className="">Timeloom</span>
 				</h1>
@@ -37,7 +37,7 @@ export default function Home() {
 					Timeloom helps you to document your technical journey in an
 					activity timeline like page. You can create your own page,
 					craft it as you like and show it off to the world.{" "}
-					<span className="text-white font-medium">
+					<span className="dark:text-white text-black font-medium">
 						Claim your username today!
 					</span>
 				</p>
