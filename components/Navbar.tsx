@@ -60,14 +60,8 @@ const Navbar = () => {
 					<GithubIcon size={20} strokeWidth={1.5} />
 				</Link>
 				{data?.isLoggedIn ? (
-					<Button
-						variant="outline"
-						onClick={logout}
-						disabled={loading}
-					>
-						{loading ? (
-							<Loader2 size={20} className="animate-spin" />
-						) : null}
+					<Button variant="outline" onClick={logout} disabled={loading}>
+						{loading ? <Loader2 size={20} className="animate-spin" /> : null}
 						Logout
 					</Button>
 				) : (
